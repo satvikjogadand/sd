@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Cosmic Creator | Portfolio of Wonders 🌟</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Pacifico&family=Press+Start+2P&family=Rubik+Mono+One&display=swap">
+    <style>
+        :root {
+            /* 🌈 Rainbow Color Variables */
+            --neon-pink: #ff00ff;
+            --electric-blue: #00f0ff;
+            --lime-green: #00ff9d;
+            --violet-purple: #9d00ff;
+            --sunshine-yellow: #fff000;
+            --flame-orange: #ff5e00;
+            --matrix-green: #00ff41;
+            --galaxy-purple: #4d00ff;
+            --cosmic-silver: #e0e0e0;
+            --void-black: #000013;
+            
+            /* ✨ Animation Variables */
+            --pulse: pulse 2s infinite;
+            --float: float 6s ease-in-out infinite;
+            --glow: 0 0 15px currentColor;
+            --hyper-glow: 0 0 30px currentColor;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--void-black);
+            color: white;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, var(--galaxy-purple) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, var(--electric-blue) 0%, transparent 40%),
+                radial-gradient(circle at 40% 60%, var(--neon-pink) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* 🚀 Preloader - Hyperspace Jump */
+        .hyperspace-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--void-black);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.5s ease-out;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1px 1px at 20% 30%, white 1px, transparent 1px),
+                radial-gradient(1px 1px at 40% 70%, white 1px, transparent 1px),
+                radial-gradient(1px 1px at 60% 20%, white 1px, transparent 1px),
+                radial-gradient(1px 1px at 80% 50%, white 1px, transparent 1px);
+            background-size: 200px 200px;
+            animation: starMove 20s linear infinite;
+        }
+
+        @keyframes starMove {
+            from { transform: translateY(0); }
+            to { transform: translateY(-200px); }
+        }
+
+        .jump-text {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(90deg, var(--neon-pink), var(--electric-blue), var(--lime-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: var(--glow);
+            animation: var(--pulse);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hyperspace-bar {
+            width: 300px;
+            height: 10px;
+            background: linear-gradient(90deg, var(--void-black), var(--electric-blue), var(--void-black));
+            border-radius: 10px;
+            margin-top: 2rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px var(--electric-blue);
+        }
+
+        .hyperspace-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--neon-pink), var(--violet-purple));
+            animation: hyperspaceLoading 3s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+        }
+
+        @keyframes hyperspaceLoading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* 🌌 Navigation - Cosmic Explorer */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0, 0, 19, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--electric-blue);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+        }
+
+        nav.scrolled {
+            padding: 1rem 3rem;
+            background: rgba(0, 0, 30, 0.95);
+        }
+
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--neon-pink), var(--electric-blue), var(--lime-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: var(--pulse);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--electric-blue));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 80%;
+        }
+
+        /* 🌠 Hero Section - Cosmic Welcome */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+            background: linear-gradient(45deg, var(--neon-pink), var(--electric-blue), var(--lime-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            animation: var(--pulse);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--cosmic-silver);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, var(--neon-pink), var(--violet-purple));
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(157, 0, 255, 0.4);
+            z-index: 1;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 3px solid var(--electric-blue);
+            color: var(--electric-blue);
+            box-shadow: 0 5px 25px rgba(0, 240, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(157, 0, 255, 0.6);
+        }
+
+        .cta-button.secondary:hover {
+            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.6);
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* 🪐 Floating Planets Decorations */
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 20px currentColor);
+            animation: var(--float);
+            z-index: -1;
+        }
+
+        .planet-1 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 30% 30%, var(--neon-pink), var(--violet-purple));
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .planet-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle at 70% 30%, var(--electric-blue), var(--galaxy-purple));
+            bottom: 10%;
+            right: 5%;
+            animation-delay: 1s;
+        }
+
+        .planet-3 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at 50% 70%, var(--lime-green), var(--sunshine-yellow));
+            top: 60%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* 🌀 Skills Section - Cosmic Abilities */
+        .skills-section {
+            padding: 8rem 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, var(--electric-blue), var(--lime-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--cosmic-silver);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skill-card {
+            background: rgba(0, 0, 30, 0.7);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.2);
+            border-color: var(--electric-blue);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--neon-pink), var(--electric-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skill-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .skill-desc {
+            color: var(--cosmic-silver);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--violet-purple));
+            position: relative;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: progressShine 2s infinite;
+        }
+
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* 🚀 Projects Section - Galactic Showcase */
+        .projects-section {
+            padding: 8rem 10%;
+            background: radial-gradient(circle at center, rgba(77, 0, 255, 0.1) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 30, 0.7);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(157, 0, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(157, 0, 255, 0.1);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(157, 0, 255, 0.3);
+            border-color: var(--neon-pink);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 30, 0.9) 20%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 240, 255, 0.2);
+            border: 1px solid var(--electric-blue);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: var(--electric-blue);
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .project-desc {
+            color: var(--cosmic-silver);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(45deg, var(--neon-pink), var(--violet-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(157, 0, 255, 0.4);
+        }
+
+        .project-link.secondary {
+            background: transparent;
+            border: 1px solid var(--electric-blue);
+            color: var(--electric-blue);
+        }
+
+        .project-link.secondary:hover {
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        /* 🌟 Experience Section - Cosmic Timeline */
+        .experience-section {
+            padding: 8rem 10%;
+            position: relative;
+            background: radial-gradient(circle at 80% 50%, rgba(0, 240, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--neon-pink), var(--violet-purple), var(--electric-blue));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--electric-blue));
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .left::after {
+            right: -12px;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 2rem;
+            background: rgba(0, 0, 30, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+            border-color: var(--electric-blue);
+        }
+
+        .timeline-date {
+            color: var(--electric-blue);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .timeline-company {
+            color: var(--neon-pink);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .timeline-desc {
+            color: var(--cosmic-silver);
+            margin-bottom: 1rem;
+        }
+
+        /* 🛰️ Contact Section - Interstellar Communication */
+        .contact-section {
+            padding: 8rem 10%;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 255, 157, 0.05) 0%, transparent 50%);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 30, 0.7);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            background: linear-gradient(45deg, var(--electric-blue), var(--lime-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--violet-purple));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: white;
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--cosmic-silver);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--electric-blue);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .contact-form {
+            background: rgba(0, 0, 30, 0.7);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(157, 0, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-label {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--cosmic-silver);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label {
+            top: -0.8rem;
+            left: 0.8rem;
+            font-size: 0.8rem;
+            background: var(--void-black);
+            padding: 0 0.5rem;
+            color: var(--electric-blue);
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, var(--neon-pink), var(--violet-purple));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 25px rgba(157, 0, 255, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(157, 0, 255, 0.5);
+        }
+
+        /* 🚀 Footer - Cosmic Base */
+        footer {
+            background: rgba(0, 0, 19, 0.9);
+            padding: 5rem 10% 3rem;
+            text-align: center;
+            position: relative;
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .footer-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            background: linear-gradient(45deg, var(--neon-pink), var(--electric-blue), var(--lime-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 2rem;
+            display: inline-block;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: var(--cosmic-silver);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-link:hover {
+            color: var(--electric-blue);
+        }
+
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--electric-blue);
+            transition: width 0.3s ease;
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 240, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: var(--electric-blue);
+            font-size: 1.5rem;
+        }
+
+        .social-link:hover {
+            background: var(--electric-blue);
+            color: var(--void-black);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .copyright {
+            color: var(--cosmic-silver);
+            font-size: 0.9rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--neon-pink), var(--violet-purple));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 0 30px rgba(157, 0, 255, 0.7);
+        }
+
+        /* ✨ Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left, .right {
+                left: 0;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 0 5%;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 🚀 Hyperspace Loader -->
+    <div class="hyperspace-loader" id="hyperspaceLoader">
+        <div class="stars"></div>
+        <div class="jump-text">PREPARING FOR LAUNCH</div>
+        <div class="hyperspace-bar">
+            <div class="hyperspace-progress"></div>
+        </div>
+    </div>
+
+    <!-- 🪐 Floating Planets -->
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+    <div class="planet planet-3"></div>
+
+    <!-- 🚀 Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">Cosmic Creator</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Journey</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 🌌 Hero Section -->
+    <section class="hero" id="home">
+        <canvas class="particles" id="particles"></canvas>
+        <div class="hero-content">
+            <h1>DESIGNING THE FUTURE IN <span class="typing-text"></span></h1>
+            <p>I craft immersive digital experiences that push boundaries and defy expectations. My work exists at the intersection of technology and art, creating moments that inspire and transform.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button">Explore My Work</a>
+                <a href="#contact" class="cta-button secondary">Let's Collaborate</a>
+            </div>        </div>
+    </section>
+
+    <!-- 🌀 Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="section-header">
+            <h2>Cosmic Abilities</h2>
+            <p>My skills span across multiple dimensions of digital creation, allowing me to craft experiences that transcend ordinary boundaries.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+                <h3 class="skill-title">Frontend Alchemy</h3>
+                <p class="skill-desc">Transforming designs into living, breathing interfaces with React, Vue, and pure cosmic energy.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+                <p class="skill-level">95% Mastery</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-server"></i></div>
+                <h3 class="skill-title">Backend Wizardry</h3>
+                <p class="skill-desc">Conjuring powerful server architectures with Node.js, Python, and database sorcery.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <p class="skill-level">85% Mastery</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3 class="skill-title">Design Nebula</h3>
+                <p class="skill-desc">Creating visually stunning UI/UX experiences that guide users through celestial journeys.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+                <p class="skill-level">90% Mastery</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3 class="skill-title">Mobile Cosmos</h3>
+                <p class="skill-desc">Building cross-platform mobile experiences that orbit perfectly around user needs.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <p class="skill-level">80% Mastery</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                <h3 class="skill-title">AI Constellation</h3>
+                <p class="skill-desc">Harnessing machine learning to create intelligent systems that adapt and evolve.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+                <p class="skill-level">75% Mastery</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+                <h3 class="skill-title">Game Galaxy</h3>
+                <p class="skill-desc">Developing immersive game worlds with Unity and WebGL that transport players.</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
+                </div>
+                <p class="skill-level">70% Mastery</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🚀 Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="section-header">
+            <h2>Galactic Showcase</h2>
+            <p>Explore my constellation of projects that push the boundaries of what's possible in digital space.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://source.unsplash.com/random/600x400/?tech,app" alt="Nebula Dashboard" class="project-image">
+                <div class="project-overlay">
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">D3.js</span>
+                        <span class="project-tag">Node.js</span>
+                    </div>
+                    <h3 class="project-title">Nebula Dashboard</h3>
+                    <p class="project-desc">A cosmic data visualization platform that transforms complex metrics into stellar insights.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link secondary">View Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://source.unsplash.com/random/600x400/?mobile,app" alt="Quantum Messenger" class="project-image">
+                <div class="project-overlay">
+                    <div class="project-tags">
+                        <span class="project-tag">Flutter</span>
+                        <span class="project-tag">Firebase</span>
+                        <span class="project-tag">WebRTC</span>
+                    </div>
+                    <h3 class="project-title">Quantum Messenger</h3>
+                    <p class="project-desc">End-to-end encrypted communication app with quantum-resistant algorithms.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">App Store</a>
+                        <a href="#" class="project-link secondary">View Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://source.unsplash.com/random/600x400/?vr,game" alt="Cosmic Odyssey" class="project-image">
+                <div class="project-overlay">
+                    <div class="project-tags">
+                        <span class="project-tag">Unity</span>
+                        <span class="project-tag">C#</span>
+                        <span class="project-tag">VR</span>
+                    </div>
+                    <h3 class="project-title">Cosmic Odyssey</h3>
+                    <p class="project-desc">An immersive VR journey through procedurally generated galaxies.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Play Now</a>
+                        <a href="#" class="project-link secondary">Dev Blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://source.unsplash.com/random/600x400/?ecommerce,shop" alt="Stellar Commerce" class="project-image">
+                <div class="project-overlay">
+                    <div class="project-tags">
+                        <span class="project-tag">Vue.js</span>
+                        <span class="project-tag">Stripe</span>
+                        <span class="project-tag">MongoDB</span>
+                    </div>
+                    <h3 class="project-title">Stellar Commerce</h3>
+                    <p class="project-desc">Next-generation e-commerce platform with AI-powered recommendations.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Visit Store</a>
+                        <a href="#" class="project-link secondary">Case Study</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://source.unsplash.com/random/600x400/?music,app" alt="Audio Nebula" class="project-image">
+                <div class="project-overlay">
+                    <div class="project-tags">
+                        <span class="project-tag">Web Audio API</span>
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">TensorFlow.js</span>
+                    </div>
+                    <h3 class="project-title">Audio Nebula</h3>
+                    <p class="project-desc">Interactive music visualizer that responds to your emotions in real-time.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Experience</a>
+                        <a href="#" class="project-link secondary">Tech Specs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://source.unsplash.com/random/600x400/?code,editor" alt="Code Cosmos" class="project-image">
+                <div class="project-overlay">
+                    <div class="project-tags">
+                        <span class="project-tag">TypeScript</span>
+                        <span class="project-tag">VS Code</span>
+                        <span class="project-tag">AI</span>
+                    </div>
+                    <h3 class="project-title">Code Cosmos</h3>
+                    <p class="project-desc">An intelligent code editor with spatial programming visualization.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Download</a>
+                        <a href="#" class="project-link secondary">Contribute</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="section-header">
+            <h2>Cosmic Journey</h2>
+            <p>My professional trajectory through the digital universe, marked by milestones and discoveries.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - Present</div>
+                    <h3 class="timeline-title">Lead Cosmic Engineer</h3>
+                    <div class="timeline-company">Nebula Technologies</div>
+                    <p class="timeline-desc">Orchestrating the development of next-generation web applications that push the boundaries of user experience and technical innovation.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">2019 - 2022</div>
+                    <h3 class="timeline-title">Senior Stellar Developer</h3>
+                    <div class="timeline-company">Galaxy Digital</div>
+                    <p class="timeline-desc">Architected and implemented complex frontend systems for enterprise clients, reducing load times by 60% and increasing user engagement.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-date">2017 - 2019</div>
+                    <h3 class="timeline-title">Interstellar Designer</h3>
+                    <div class="timeline-company">Cosmic Creations</div>
+                    <p class="timeline-desc">Crafted visually stunning interfaces and design systems for startups and established brands, winning 3 industry awards.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-date">2015 - 2017</div>
+                    <h3 class="timeline-title">Junior Quantum Developer</h3>
+                    <div class="timeline-company">Orbit Solutions</div>
+                    <p class="timeline-desc">Built and maintained web applications while mastering the fundamentals of full-stack development in a fast-paced agency environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🛰️ Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2>Interstellar Communication</h2>
+            <p>Ready to collaborate on something extraordinary? Send a signal through the cosmic void.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Transmission Details</h3>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <h4>Cosmic Mail</h4>
+                        <a href="mailto:creator@cosmic.dev">creator@cosmic.dev</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-text">
+                        <h4>Quantum Link</h4>
+                        <a href="tel:+11234567890">+1 (123) 456-7890</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <h4>Orbital Station</h4>
+                        <p>San Francisco, CA</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-text">
+                        <h4>Temporal Availability</h4>
+                        <p>Monday - Friday: 9AM - 6PM PST</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="cosmicForm">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-input" placeholder=" " required>
+                        <label for="name" class="form-label">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-input" placeholder=" " required>
+                        <label for="email" class="form-label">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" class="form-input" placeholder=" ">
+                        <label for="subject" class="form-label">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" class="form-input" placeholder=" " required></textarea>
+                        <label for="message" class="form-label">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Transmit Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🚀 Footer -->
+    <footer>
+        <div class="footer-logo">Cosmic Creator</div>
+        <div class="footer-links">
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#skills" class="footer-link">Skills</a>
+            <a href="#projects" class="footer-link">Projects</a>
+            <a href="#experience" class="footer-link">Journey</a>
+            <a href="#contact" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Blog</a>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-codepen"></i></a>
+        </div>
+        <p class="copyright">© 2023 Cosmic Creator. All rights reserved across the multiverse.</p>
+        <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+
+    <script>
+        // 🚀 Hyperspace Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('hyperspaceLoader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 1500);
+            }, 3000);
+        });
+
+        // ✨ Typing Animation
+        const typingText = document.querySelector('.typing-text');
+        const words = ["CODE", "DESIGN", "TECHNOLOGY", "SPACE", "THE COSMOS"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isEnd = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            const currentChar = currentWord.substring(0, charIndex);
+            typingText.textContent = currentChar;
+            
+            if (!isDeleting && charIndex < currentWord.length) {
+                charIndex++;
+                setTimeout(type, 200);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(type, 100);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+                setTimeout(type, 1000);
+            }
+        }
+
+        // Start typing effect
+        setTimeout(type, 1500);
+
+        // 🌠 Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 🪐 Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // 🌀 Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 🌌 Particle Background
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const particles = [];
+        const particleCount = window.innerWidth < 768 ? 30 : 100;
+        
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 3 + 1,
+                speedX: Math.random() * 1 - 0.5,
+                speedY: Math.random() * 1 - 0.5,
+                color: `hsl(${Math.random() * 60 + 180}, 100%, 70%)`
+            });
+        }
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                
+                p.x += p.speedX;
+                p.y += p.speedY;
+                
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+            }
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        animateParticles();
+        
+        // 🪐 Responsive Resize
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // 🛰️ Form Submission
+        const cosmicForm = document.getElementById('cosmicForm');
+        cosmicForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message transmitted across the cosmos! I\'ll respond via quantum entanglement soon.');
+            this.reset();
+        });
+
+        // 🌟 Animate Skill Bars on Scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        const skillsSection = document.querySelector('.skills-section');
+
+        function animateSkillBars() {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(skillsSection);
+    </script>
+</body>
+</html>
